@@ -1,4 +1,4 @@
-package com.Cydeo.runners;
+package com.cydeo.runners;
 
 public class CukesRunner {
 }

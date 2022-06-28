@@ -1,4 +1,4 @@
-package com.Cydeo.pages;
+package com.cydeo.pages;
 
 public class BasePage {
 }

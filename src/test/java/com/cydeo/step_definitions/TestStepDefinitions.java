@@ -1,4 +1,4 @@
-package com.Cydeo.step_definitions;
+package com.cydeo.step_definitions;
 
 public class TestStepDefinitions {
 }
