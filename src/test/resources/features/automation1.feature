@@ -7,6 +7,5 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses three files from their computer
-    And User clicks on Open
     Then Files are uploaded as attachments for the message
 
