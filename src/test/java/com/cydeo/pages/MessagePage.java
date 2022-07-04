@@ -26,4 +26,43 @@ public class MessagePage extends BasePage {
     @FindBy(xpath = "//tr[@class='wd-inline-file']")
     public WebElement uploadedFile;
 
+    @FindBy(xpath = "//*[@id=\"disk-attach-block-Ny1b1Y\"]/div/div[1]")
+    public WebElement photoAttachment;
+
+    @FindBy(xpath = "//*[@id=\"disk-attach-block-dk1Hn1Z\"]/div/div[1]")
+    public WebElement fileAttachment;
+
+    @FindBy (xpath = "//span[@class='user-name']")
+    public WebElement logoutDD;
+
+    @FindBy (xpath = "//a[@href='/auth/?logout=yes&backurl=%2Fstream%2F']")
+    public WebElement logoutButton;
+
+    @FindBy (className = "bx-editor-iframe")
+    public WebElement iframe;
+
+    @FindBy (xpath = "//body[@contenteditable='true']")
+    public WebElement iframeBox;
+
+    @FindBy(xpath = "//span[@class='insert-btn-text']")
+    public WebElement insertInTextBox;
+
+    @FindBy(id = "diskuf-edit-rigths-doc")
+    public WebElement editCheckbox;
+
+    @FindBy (xpath = "//span[@class='del-but']")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//span[@class='files-name-edit-btn']")
+    public WebElement renameButton;
+
+    @FindBy (xpath = "//input[@class='files-name-edit-inp']")
+    public WebElement renameBox;
+
+    @FindBy (xpath = "//td[@class= 'files-name']")
+    public WebElement activatingBox;
+
+
+
+
 }
