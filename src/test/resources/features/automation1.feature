@@ -30,7 +30,7 @@ Feature: Uploading files and pictures as messages
     And User chooses pdf document
     And Files are uploaded as attachments for the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the document attached
 
   @AC2-c
   Scenario: Uploading different types of files each time (jpeg)

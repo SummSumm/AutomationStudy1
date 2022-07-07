@@ -16,6 +16,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.crypto.KeyAgreementSpi;
@@ -43,7 +44,7 @@ public class Automation1 {
 
     @Then("user sees the document attached")
     public void user_sees_the_document_attached() {
-          Assert.assertTrue(messagePage.fileAttachment.isDisplayed());
+          Assert.assertTrue(messagePage.attachment.isDisplayed());
     }
 
     @When("User clicks on the Upload Files and Images box")
@@ -166,3 +167,4 @@ public class Automation1 {
 
 
 }
+

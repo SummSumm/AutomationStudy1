@@ -26,11 +26,9 @@ public class MessagePage extends BasePage {
     @FindBy(xpath = "//tr[@class='wd-inline-file']")
     public WebElement uploadedFile;
 
-    @FindBy(xpath = "//*[@id=\"disk-attach-block-Ny1b1Y\"]/div/div[1]")
-    public WebElement photoAttachment;
 
-    @FindBy(xpath = "//*[@id=\"disk-attach-block-dk1Hn1Z\"]/div/div[1]")
-    public WebElement fileAttachment;
+    @FindBy(xpath = "(//div[starts-with(@class, 'feed-com-files-title')])[1]")
+    public WebElement attachment;
 
     @FindBy (xpath = "//span[@class='user-name']")
     public WebElement logoutDD;
