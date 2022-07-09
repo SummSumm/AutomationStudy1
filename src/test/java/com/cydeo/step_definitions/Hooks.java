@@ -13,13 +13,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Hooks {
-    MessagePage messagePage = new MessagePage();
+    //MessagePage messagePage = new MessagePage();
 
     @After
     public void close() {
-        BrowserUtils.sleep(10);
-        messagePage.logoutDD.click();
-        messagePage.logoutButton.click();
+        BrowserUtils.sleep(5);
+        Driver.closeDriver();
+  //      messagePage.logoutDD.click();
+    //    messagePage.logoutButton.click();
     }
 
 

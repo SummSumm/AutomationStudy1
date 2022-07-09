@@ -30,8 +30,8 @@ public class BasePage {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
         userNameBox.clear();
-        Faker faker = new Faker();
-        userNameBox.sendKeys("hr" + faker.numerify("##") + "@cybertekschool.com");
+       // Faker faker = new Faker();
+        userNameBox.sendKeys("hr88@cybertekschool.com");
         passwordBox.sendKeys("UserUser");
         loginButton.click();
     }

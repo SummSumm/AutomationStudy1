@@ -7,7 +7,7 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses three files from their computer
-    Then Files are uploaded as attachments for the message
+    #Then Files are uploaded as attachments for the message
     And user clicks on send button
     Then user sees the document attached
 
@@ -18,7 +18,7 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses word document
-    And Files are uploaded as attachments for the message
+    #And Files are uploaded as attachments for the message
     And user clicks on send button
     Then user sees the document attached
 
@@ -28,7 +28,7 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses pdf document
-    And Files are uploaded as attachments for the message
+   # And Files are uploaded as attachments for the message
     And user clicks on send button
     Then user sees the document attached
 
@@ -38,9 +38,9 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses jpeg document
-    And Files are uploaded as attachments for the message
+   # And Files are uploaded as attachments for the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the document attached
 
   @AC2-d
   Scenario: Uploading different types of files each time (png)
@@ -48,9 +48,9 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses png document
-    And Files are uploaded as attachments for the message
+  #  And Files are uploaded as attachments for the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the document attached
 
   @AC2-e
   Scenario: Uploading different types of files each time (txt)
@@ -58,9 +58,9 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses txt document
-    And Files are uploaded as attachments for the message
+   # And Files are uploaded as attachments for the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the document attached
 
 
   @AC2-f
@@ -69,9 +69,9 @@ Feature: Uploading files and pictures as messages
     And user clicks on Message
     When User clicks on the Upload Files and Images box
     And User chooses gif document
-    And Files are uploaded as attachments for the message
+  #  And Files are uploaded as attachments for the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the document attached
 
   @AC5-a
   Scenario: Inserting files in message (docx)
@@ -83,7 +83,7 @@ Feature: Uploading files and pictures as messages
     And user clicks on insert in text button
     And Files are uploaded inside the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the inserted document attached
 
   @AC5-b
   Scenario: Inserting files in message (gif)
@@ -95,9 +95,19 @@ Feature: Uploading files and pictures as messages
     And user clicks on insert in text button
     And Files are uploaded inside the message
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the inserted document attached
 
-  @AC6
+  @AC6-p
+  Scenario: Allowing other users to edit attachments
+    Given user is on homepage
+    And user clicks on Message
+    When User clicks on the Upload Files and Images box
+    And User chooses word document
+    And user verifies that Allow a recipient to edit documents? box is already checked
+    And user clicks on send button
+    Then user can click on the edit button
+
+  @AC6_bug
   Scenario: Allowing other users to edit attachments
     Given user is on homepage
     And user clicks on Message
@@ -105,7 +115,7 @@ Feature: Uploading files and pictures as messages
     And User chooses png document
     And user verifies that Allow a recipient to edit documents? box is already checked
     And user clicks on send button
-#Then user sees the document attached
+    Then user can click on the edit button
 
   @AC7
   Scenario: Removing attached attachments
@@ -116,15 +126,20 @@ Feature: Uploading files and pictures as messages
     And User chooses jpeg document
     And user clicks on X button
     And user clicks on send button
-#Then user sees the document attached
+    Then user does not see the document attached
+
 
   @AC8
-  Scenario: Renaming attached file
+  Scenario Outline: Renaming attached file
     Given user is on homepage
     And user clicks on Message
     When User clicks on the Upload Files and Images box
-    And User chooses png document
+    And User chooses word document
     And user hovers over file name and clicks on the pen icon
-    And user changes the name of the document
+    And user changes the "<name>" of the document
     And user clicks on send button
-#Then user sees the document attached
+    Then user sees the new document "<name2>"
+
+    Examples:
+      | name          |  | name2    |
+      | New file name |  | New file |

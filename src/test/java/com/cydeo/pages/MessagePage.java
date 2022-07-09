@@ -23,18 +23,17 @@ public class MessagePage extends BasePage {
     @FindBy(name = "bxu_files[]")
     public WebElement uploadfilesBox;
 
-    @FindBy(xpath = "//tr[@class='wd-inline-file']")
-    public WebElement uploadedFile;
-
-
-    @FindBy(xpath = "(//div[starts-with(@class, 'feed-com-files-title')])[1]")
+    @FindBy (xpath = "(//*[starts-with(@id, 'disk-attach')])[1]")
     public WebElement attachment;
 
-    @FindBy (xpath = "//span[@class='user-name']")
-    public WebElement logoutDD;
+   @FindBy(xpath = "(//img[starts-with(@id, 'disk-inline')])[1]")
+    public WebElement Insertedattachment;
 
-    @FindBy (xpath = "//a[@href='/auth/?logout=yes&backurl=%2Fstream%2F']")
-    public WebElement logoutButton;
+   @FindBy(xpath = "(//a[starts-with(@id, 'disk-attach')])[1]")
+   public WebElement Insertedattachment2;
+
+   @FindBy (xpath = "(//a[starts-with(@class, 'feed-con-file-changes-link')])[1]")
+   public WebElement editButton;
 
     @FindBy (className = "bx-editor-iframe")
     public WebElement iframe;
@@ -59,8 +58,5 @@ public class MessagePage extends BasePage {
 
     @FindBy (xpath = "//td[@class= 'files-name']")
     public WebElement activatingBox;
-
-
-
 
 }
